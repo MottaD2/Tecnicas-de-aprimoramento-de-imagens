@@ -1,5 +1,5 @@
 # Informações sobre o repositório:
-Este repositório foi desenvolvido  para divulgação dos códigos utilizados na dissertação de mestrado intitulada "Aplicação de técnicas de aprimoramento de imagens em dados de satélitre multiespectral e geofísicos" apresentada à Universidade Federal Fluminense através do Programa de Pós- Graduação em Dinâmicas dos Oceanos e da Terra.
+Este repositório foi desenvolvido por [Daniella Motta](http://lattes.cnpq.br/5650985365444086) para divulgação dos códigos utilizados na dissertação de mestrado intitulada "Aplicação de técnicas de aprimoramento de imagens em dados de satélitre multiespectral e geofísicos" apresentada à Universidade Federal Fluminense através do Programa de Pós- Graduação em Dinâmicas dos Oceanos e da Terra.
 
 ## Técnicas de aprimoramento de imagens
 
