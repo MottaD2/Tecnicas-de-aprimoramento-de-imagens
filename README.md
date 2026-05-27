@@ -51,7 +51,7 @@ Esta metodologia aplica-se tanto a dados topográficos quanto ao Modelo Digital 
 
     - Leitura e validação dos dados de entrada, com verificação das dimensões da malha, da resolução espacial e do intervalo de altitudes (ou amplitudes), assegurando a consistência do conjunto de dados;
     - Cálculo da inclinação do terreno a partir das derivadas nas direções x e y (gradientes), obtendo-se o módulo do gradiente e convertendo-o posteriormente para valores em graus;
-    - Cálculo da abertura topográfica *Openness*, no qual, para cada ponto, a variação do relevo é avaliada em oito direções ao redor do pixel em função da distância, caracterizando a geometria local da superfície;
+    - Cálculo da abertura topográfica Openness, no qual, para cada ponto, a variação do relevo é avaliada em oito direções ao redor do pixel em função da distância, caracterizando a geometria local da superfície;
     - Determinação dos ângulos máximos e mínimos de visibilidade do terreno a partir dessas variações, os quais representam, respectivamente, as componentes de abertura positiva e negativa;
     - Geração da imagem RRIM, etapa em que os valores de inclinação e de abertura são utilizados como índices no mapa de cores; ao combinar esses atributos, atribui-se uma cor a cada pixel, produzindo a imagem final.
 
