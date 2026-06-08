@@ -24,8 +24,9 @@ Em termos gerais, a metodologia parte de uma composição no visível (RGB 321) 
      - Gerar a imagem da diferença das composições 675 - 321, onde a banda 6 representa a banda termal, a 7 o infravermelho médio, 5 infravermelho de onda curta, 3 o vermelho, 2 o verde e 1 o azul;
      - Obter a razão das bandas 6/8, com a banda 6 sendo a banda termal e a 8 a banda pancromática.
 
-[*Structurally Enhanced RGB - Colab Notebook*](https://colab.research.google.com/drive/1dROCNAXyvyVTtqZNrSS1RbWyD-y-dKSo?usp=sharing)
-[*Structurally Enhanced RGB - VsCode*]()
+[*Structurally Enhanced RGB - Versão Colab Notebook*](https://colab.research.google.com/drive/1dROCNAXyvyVTtqZNrSS1RbWyD-y-dKSo?usp=sharing)
+
+[*Structurally Enhanced RGB - Versão VsCode*](https://drive.google.com/file/d/11jaE-Foj-w_MbsMpQVTNivACis_MhGd3/view?usp=sharing)
 
 
 ## **Structured-Sharpened Continuous RGB (SRGB)**
