@@ -24,7 +24,9 @@ Em termos gerais, a metodologia parte de uma composição no visível (RGB 321) 
      - Gerar a imagem da diferença das composições 675 - 321, onde a banda 6 representa a banda termal, a 7 o infravermelho médio, 5 infravermelho de onda curta, 3 o vermelho, 2 o verde e 1 o azul;
      - Obter a razão das bandas 6/8, com a banda 6 sendo a banda termal e a 8 a banda pancromática.
 
-[*Structurally Enhanced RGB - Colab Notebook*]()
+[*Structurally Enhanced RGB - Colab Notebook*](https://colab.research.google.com/drive/1dROCNAXyvyVTtqZNrSS1RbWyD-y-dKSo?usp=sharing)
+[*Structurally Enhanced RGB - VsCode*]()
+
 
 ## **Structured-Sharpened Continuous RGB (SRGB)**
 O método *Structured-Sharpened Continuous RGB (SRGB)*, proposto por [Laake (2015)](https://doi.org/10.1190/int-2014-0041.1) constitui uma metodologia voltada para a interpretação de dados sísmicos. O procedimento parte de um cubo sísmico e utiliza atributos extraídos do volume para construir uma composição RGB contínua, que é combinada para formar uma imagem RGB aprimorada, voltada a realçar padrões e descontinuidades de interesse interpretativo. A aplicação do método SRGB a volumes sísmicos pode melhorar a representação e a visualização de características geológicas de interesse interpretativo. Ao integrar diferentes atributos em uma composição RGB contínua e aplicar realces estruturais, o SRGB tende a aumentar o contraste e a continuidade espacial de feições, tornando-as mais distinguíveis no volume. Entre os alvos citados pelos autores estão falhas, canais e corpos salinos, que podem ser melhor delineados e acompanhados lateralmente quando comparados à inspeção direta dos dados sísmicos ou de atributos isolados.
