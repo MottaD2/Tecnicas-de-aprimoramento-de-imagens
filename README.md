@@ -72,6 +72,226 @@ Para viabilizar a aplicação da metodologia a dados sísmicos, foi necessária 
 
 O *Red Relief Image Map (RRIM)* é uma técnica eficaz para evidenciar concavidades e convexidades, realçando feições e estruturas presentes em dados topográficos e facilitando a interpretação de padrões morfológicos que podem ser pouco perceptíveis em representações tradicionais. Ao enfatizar contrastes locais associados à geometria do relevo, o método contribui para a identificação de lineamentos, bordas e descontinuidades, além de apoiar análises em diferentes escalas. No entanto, visando ampliar o potencial de realce e avaliar sua aplicabilidade, nesta pesquisa, o método não foi restrito a um Modelo Digital de Elevação (MDE); ele foi adaptado para ser empregado também em dados sísmicos, gravimétricos, magnetométricos e gamaespectrométricos, permitindo explorar até que ponto a metodologia consegue destacar tendências, estruturas e variações espaciais nesses domínios, bem como reconhecer suas limitações e condições de uso.
 
+# Tutorial: Criando um novo ambiente Conda no VS Code e instalando as bibliotecas
+
+## 1. Abrir o Anaconda Prompt
+
+Abra o **Anaconda Prompt** (ou Miniforge Prompt, se você usa Miniforge).
+
+Verifique se o Conda está funcionando:
+
+```bash
+conda --version
+```
+
+---
+
+## 2. Criar um novo ambiente
+
+Como o RichDEM funciona melhor em versões mais antigas do Python, crie um ambiente com Python 3.10:
+
+```bash
+conda create -n richdem_env python=3.10
+```
+
+Digite `y` quando solicitado.
+
+---
+
+## 3. Ativar o ambiente
+
+```bash
+conda activate richdem_env
+```
+
+Verifique a versão do Python:
+
+```bash
+python --version
+```
+
+O resultado deve ser parecido com:
+
+```text
+Python 3.10.x
+```
+
+---
+
+## 4. Atualizar pip
+
+```bash
+python -m pip install --upgrade pip
+```
+
+---
+
+## 5. Instalar GDAL
+
+Primeiro instale o GDAL pelo Conda:
+
+```bash
+conda install -c conda-forge gdal
+```
+
+Teste:
+
+```bash
+python -c "from osgeo import gdal; print(gdal.VersionInfo())"
+```
+
+---
+
+## 6. Instalar RichDEM
+
+```bash
+pip install richdem
+```
+
+Teste:
+
+```bash
+python -c "import richdem as rd; print(rd.__version__)"
+```
+
+---
+
+## 7. Instalar OpenCV
+
+```bash
+pip install opencv-python
+```
+
+Teste:
+
+```bash
+python -c "import cv2; print(cv2.__version__)"
+```
+
+---
+
+## 8. Instalar RVT
+
+```bash
+pip install rvt-py
+```
+
+Teste:
+
+```bash
+python -c "import rvt.vis"
+```
+
+---
+
+## 9. Instalar Alive Progress
+
+```bash
+pip install alive-progress
+```
+
+Teste:
+
+```bash
+python -c "from alive_progress import alive_bar"
+```
+
+---
+
+## 10. Instalar NumPy
+
+Normalmente ele já vem instalado, mas você pode garantir:
+
+```bash
+pip install numpy
+```
+
+Teste:
+
+```bash
+python -c "import numpy as np; print(np.__version__)"
+```
+
+---
+
+## 11. Verificar todos os imports
+
+Crie um arquivo chamado `teste.py` com:
+
+```python
+import cv2
+import numpy as np
+import richdem as rd
+from osgeo import gdal
+import rvt.vis
+import time
+import os
+from alive_progress import alive_bar
+
+print("Todas as bibliotecas foram carregadas com sucesso.")
+```
+
+Execute:
+
+```bash
+python teste.py
+```
+
+Se aparecer:
+
+```text
+Todas as bibliotecas foram carregadas com sucesso.
+```
+
+a instalação foi concluída.
+
+---
+
+## 12. Configurar o VS Code
+
+Abra o VS Code.
+
+Pressione:
+
+```text
+Ctrl + Shift + P
+```
+
+Digite:
+
+```text
+Python: Select Interpreter
+```
+
+Selecione:
+
+```text
+richdem_env
+```
+
+ou o caminho correspondente ao ambiente criado.
+
+---
+
+
+
+# Resumo dos comandos
+
+```bash
+conda create -n richdem_env python=3.10
+conda activate richdem_env
+
+python -m pip install --upgrade pip
+
+conda install -c conda-forge gdal
+
+pip install richdem
+pip install opencv-python
+pip install rvt-py
+pip install alive-progress
+pip install numpy
+```
+
 
 [*Red Relief Image Map - Colab Notebook*]()
 
