@@ -13,6 +13,9 @@ As técnicas de aprimoramento de imagens foram empregadas para produzir visualiz
 
  - ***Red Relief Image Map (RRIM)***
 
+## DADOS ##
+Todos os dados utilizados para este projeto se encontram no [*Google Drive*](https://drive.google.com/drive/folders/1AxHk2rj-794AsqdXZafV3rR0gnPQmVzx?usp=drive_link).
+
 ## **Structurally Enhanced RGB (seRGB)**
 O método *Structurally Enhanced RGB*, proposto por [Laake *et al.*(2011)](https://doi.org/10.1144/1354-079310-014), foi desenvolvido para o processamento e a interpretação de imagens de satélite, com o objetivo de aprimorar o contraste estrutural e facilitar o mapeamento geológico. No estudo em questão, os autores empregaram imagens do sensor Landsat 7 ETM+ e utilizaram a técnica para realçar feições geológicas, como descontinuidades e lineamentos, tornando-as mais evidentes na composição RGB e, assim, apoiando a interpretação visual e a extração de informações geológicas a partir dos dados orbitais. O *Structurally Enhanced RGB* funciona como uma etapa de pré-interpretação, capaz de direcionar o mapeamento geológico e estrutural em imagens de satélite, reduzindo ambiguidades e aumentando a confiabilidade das interpretações quando comparadas ao uso exclusivo de composições RGB convencionais.
 
