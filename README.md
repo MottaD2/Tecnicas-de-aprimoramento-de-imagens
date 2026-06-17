@@ -72,225 +72,154 @@ Para viabilizar a aplicação da metodologia a dados sísmicos, foi necessária 
 
 O *Red Relief Image Map (RRIM)* é uma técnica eficaz para evidenciar concavidades e convexidades, realçando feições e estruturas presentes em dados topográficos e facilitando a interpretação de padrões morfológicos que podem ser pouco perceptíveis em representações tradicionais. Ao enfatizar contrastes locais associados à geometria do relevo, o método contribui para a identificação de lineamentos, bordas e descontinuidades, além de apoiar análises em diferentes escalas. No entanto, visando ampliar o potencial de realce e avaliar sua aplicabilidade, nesta pesquisa, o método não foi restrito a um Modelo Digital de Elevação (MDE); ele foi adaptado para ser empregado também em dados sísmicos, gravimétricos, magnetométricos e gamaespectrométricos, permitindo explorar até que ponto a metodologia consegue destacar tendências, estruturas e variações espaciais nesses domínios, bem como reconhecer suas limitações e condições de uso.
 
-# Tutorial: Criando um novo ambiente Conda no VS Code e instalando as bibliotecas
+ ## Instalação do Ambiente Virtual e Configuração do IPyKernel
 
-## 1. Abrir o Anaconda Prompt
-
-Abra o **Anaconda Prompt** (ou Miniforge Prompt, se você usa Miniforge).
-
-Verifique se o Conda está funcionando:
-
-```bash
-conda --version
-```
+Este projeto utiliza um ambiente Conda previamente configurado. Para reproduzir o ambiente, siga os passos abaixo.
 
 ---
 
-## 2. Criar um novo ambiente
+### 1. Instalar o Miniconda ou Anaconda
 
-Como o RichDEM funciona melhor em versões mais antigas do Python, crie um ambiente com Python 3.10:
+Caso ainda não possua o Conda instalado:
 
-```bash
-conda create -n richdem_env python=3.10
-```
+- Miniconda: https://docs.conda.io/en/latest/miniconda.html
+- Anaconda: https://www.anaconda.com/download
 
-Digite `y` quando solicitado.
-
----
-
-## 3. Ativar o ambiente
-
-```bash
-conda activate richdem_env
-```
-
-Verifique a versão do Python:
-
-```bash
-python --version
-```
-
-O resultado deve ser parecido com:
-
-```text
-Python 3.10.x
-```
+Após a instalação, abra o **Anaconda Prompt** (Windows) ou um terminal.
 
 ---
 
-## 4. Atualizar pip
+### 2. Criar o ambiente a partir do arquivo YAML
+
+Navegue até a pasta onde está o arquivo do ambiente e execute:
 
 ```bash
-python -m pip install --upgrade pip
+conda env create -f ambiente.yml
 ```
+
+Substitua `ambiente.yml` pelo nome do arquivo fornecido.
+
+Exemplo:
+
+```bash
+conda env create -f rrim_env.yml
+```
+
+O Conda instalará automaticamente todas as dependências especificadas no arquivo.
 
 ---
 
-## 5. Instalar GDAL
-
-Primeiro instale o GDAL pelo Conda:
-
-```bash
-conda install -c conda-forge gdal
-```
-
-Teste:
-
-```bash
-python -c "from osgeo import gdal; print(gdal.VersionInfo())"
-```
-
----
-
-## 6. Instalar RichDEM
-
-```bash
-pip install richdem
-```
-
-Teste:
-
-```bash
-python -c "import richdem as rd; print(rd.__version__)"
-```
-
----
-
-## 7. Instalar OpenCV
-
-```bash
-pip install opencv-python
-```
-
-Teste:
-
-```bash
-python -c "import cv2; print(cv2.__version__)"
-```
-
----
-
-## 8. Instalar RVT
-
-```bash
-pip install rvt-py
-```
-
-Teste:
-
-```bash
-python -c "import rvt.vis"
-```
-
----
-
-## 9. Instalar Alive Progress
-
-```bash
-pip install alive-progress
-```
-
-Teste:
-
-```bash
-python -c "from alive_progress import alive_bar"
-```
-
----
-
-## 10. Instalar NumPy
-
-Normalmente ele já vem instalado, mas você pode garantir:
-
-```bash
-pip install numpy
-```
-
-Teste:
-
-```bash
-python -c "import numpy as np; print(np.__version__)"
-```
-
----
-
-## 11. Verificar todos os imports
-
-Crie um arquivo chamado `teste.py` com:
-
-```python
-import cv2
-import numpy as np
-import richdem as rd
-from osgeo import gdal
-import rvt.vis
-import time
-import os
-from alive_progress import alive_bar
-
-print("Todas as bibliotecas foram carregadas com sucesso.")
-```
+### 3. Verificar o nome do ambiente criado
 
 Execute:
 
 ```bash
-python teste.py
+conda env list
 ```
 
-Se aparecer:
+Exemplo de saída:
 
 ```text
-Todas as bibliotecas foram carregadas com sucesso.
+# conda environments:
+#
+base                  C:\Users\Usuario\anaconda3
+rrim_env              C:\Users\Usuario\anaconda3\envs\rrim_env
 ```
-
-a instalação foi concluída.
 
 ---
 
-## 12. Configurar o VS Code
+### 4. Ativar o ambiente
 
-Abra o VS Code.
-
-Pressione:
-
-```text
-Ctrl + Shift + P
-```
-
-Digite:
-
-```text
-Python: Select Interpreter
-```
-
-Selecione:
-
-```text
-richdem_env
-```
-
-ou o caminho correspondente ao ambiente criado.
-
----
-
-
-
-# Resumo dos comandos
+Substitua `rrim_env` pelo nome exibido no passo anterior.
 
 ```bash
-conda create -n richdem_env python=3.10
-conda activate richdem_env
-
-python -m pip install --upgrade pip
-
-conda install -c conda-forge gdal
-
-pip install richdem
-pip install opencv-python
-pip install rvt-py
-pip install alive-progress
-pip install numpy
+conda activate rrim_env
 ```
+
+Quando ativado, o terminal exibirá algo semelhante a:
+
+```text
+(rrim_env) C:\Users\Usuario>
+```
+
+---
+
+### 5. Instalar o IPyKernel (caso não esteja incluído no ambiente)
+
+Verifique se o pacote já está instalado:
+
+```bash
+pip show ipykernel
+```
+
+Caso não esteja instalado:
+
+```bash
+pip install ipykernel
+```
+
+ou
+
+```bash
+conda install ipykernel
+```
+
+---
+
+### 6. Registrar o ambiente como kernel do Jupyter
+
+Com o ambiente ativado, execute:
+
+```bash
+python -m ipykernel install --user --name rrim_env --display-name "Python (rrim_env)"
+```
+
+Onde:
+
+- `--name` é o identificador interno do kernel.
+- `--display-name` é o nome que aparecerá no VS Code e no Jupyter.
+
+---
+
+### 7. Verificar se o kernel foi registrado
+
+Execute:
+
+```bash
+jupyter kernelspec list
+```
+
+Exemplo:
+
+```text
+Available kernels:
+  python3
+  rrim_env
+```
+
+---
+
+### 8. Selecionar o kernel no VS Code
+
+1. Abra o notebook (`.ipynb`).
+2. Clique no seletor de kernel no canto superior direito.
+3. Escolha:
+
+```text
+Python (rrim_env)
+```
+
+Se o kernel não aparecer:
+
+- Feche e abra o VS Code novamente.
+- Verifique se o ambiente está ativado corretamente.
+- Confirme o registro com:
+
+```bash
+jupyter kernelspec list
+```
+
+---
 
 
 [*Red Relief Image Map - Colab Notebook*]()
