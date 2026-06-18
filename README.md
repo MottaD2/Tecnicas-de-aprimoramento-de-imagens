@@ -224,11 +224,12 @@ jupyter kernelspec list
 
 ---
 
-
 [*Red Relief Image Map - Versão PyRRIM - VsCode*](https://drive.google.com/file/d/1gbXTF3axfECSL62Wf6yX9zJdltgsZBai/view?usp=drive_link) **[RECOMENDADO]**
 
 [*Red Relief Image Map - Versão Sussurant - VsCode*](https://drive.google.com/file/d/1sF2n1hgyO5NlTGEJYwHXKm6HUoOeXEkC/view?usp=drive_link)
 
+
+-- 
 [*Red Relief Image Map - Colab Notebook*]()
 
 [*Red Relief Image Map - Colab Notebook*]()
